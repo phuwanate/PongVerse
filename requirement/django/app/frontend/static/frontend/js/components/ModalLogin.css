@@ -1,0 +1,68 @@
+:host {
+	display: block;
+	position: fixed;
+}
+
+#textWelcome {
+	font-size: 1.5rem;
+	color: var(--primary-color);
+}
+.text-gray {
+	font-size: 0.9rem;
+	color: var(--gray-color-light);
+}
+
+label {
+	font-weight: bold;
+	margin-right: 0.5rem;
+	font-size: var(--font-size);
+	color: var(--primary-color);
+}
+
+#userLabel,
+#passLabel {
+	width: 5rem;
+}
+
+.input-css {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 10rem;
+	padding: 0.6rem 1rem;
+	border: var(--border-green);
+	font-size: var(--font-size);
+	color: var(--gray-color-dark);
+	background: var(--gray-color-bg);
+	border-radius: var(--border-radius);
+}
+
+.input-css::placeholder {
+	color: var(--gray-color-light);
+}
+
+#usernameCon {
+	margin-top: -0.5rem;
+}
+
+#passwordCon {
+	margin-bottom: 0.5rem;
+}
+
+#loginButton, #btn42{
+	margin-top: 0;
+	max-width: 20rem;
+	padding: 1rem 1;
+	color: white;
+	font-weight: bold;
+	font-size: var(--font-size);
+	border-radius: var(--border-radius);
+	background-color: var(--primary-color);
+}
+
+#loginButton:hover, #btn42:hover {
+	background-color: var(--primary-color-dark); 
+}
+
+#loginButton:active, #btn42:active {
+	background-color: var(--primary-color-darker);
+}

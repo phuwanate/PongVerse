@@ -1,0 +1,10 @@
+normal case
+
+players = [pnamnil, spipitku, plertsir, kburalek]
+
+pnamnil quit when first game start pong loop: expect plertsir win tournament
+plertsir quit when first game start pong loop: expect pnamnil win tournament
+spipitku quit when first game start pong loop: expect pnamnil win tournament
+kburalek quit when first game start pong loop: expect pnamnil win tournament
+
+pnamnil quit when first game start pong loop then plertsir quit when game finish: expect spipitku win tournament

@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:  
+  backup:
+    build:
+      context: ./requirement/backup_restore
+      dockerfile: backup.Dockerfile
+    container_name: backup
+    image: backup
+    volumes:
+      - db-postgres:/data
+      - ./requirement/django/backup:/backup
+  
+  restore:
+    build:
+      context: ./requirement/backup_restore
+      dockerfile: restore.Dockerfile
+    container_name: restore
+    image: restore
+    volumes:
+      - db-postgres:/data
+      - ./requirement/django/backup:/backup
+  
+  backup-upload:
+    build:
+      context: ./requirement/backup_restore
+      dockerfile: backup-upload.Dockerfile
+    container_name: backup-upload
+    image: backup-upload
+    volumes:
+      - db-upload:/usr/src/app/uploads/avatars/
+      - ./requirement/django/backup:/backup
+  
+  restore-upload:
+    build:
+      context: ./requirement/backup_restore
+      dockerfile: restore-upload.Dockerfile
+    container_name: restore-upload
+    image: restore-upload
+    volumes:
+      - db-upload:/usr/src/app/uploads/avatars/
+      - ./requirement/django/backup:/backup
+
+volumes:
+  db-postgres:
+   name: db-postgres
+  db-upload:
+   name: db-upload

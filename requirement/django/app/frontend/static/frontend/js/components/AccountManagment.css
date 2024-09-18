@@ -1,0 +1,64 @@
+.custom-bg {
+	height: 70vh;
+	min-height: 31rem;
+	margin-top: 2vh;
+	box-shadow: var(--box-shadow);
+	border-radius:var(--border-radius);
+}
+
+#header {
+	padding-top: 2vh;
+	padding-left: 2vw;
+	color: var(--primary-color);
+	font-size: var(--header-font-size);
+}
+
+#topic {
+	padding-left: 60px;
+	color: var(--gray-color-medium);
+	font-size: var(--header-font-size);
+}
+
+#content {
+	gap: 20px;
+	margin: 0 4vw;
+	padding: 10px;
+	border: var(--border-green);
+	border-radius: var(--border-radius);
+}
+
+#avatarCon {
+	width: 10rem;
+	height: 10rem;
+	overflow: hidden;
+	border-radius: var(--border-radius);
+}
+
+#profileImg {
+	object-fit: cover;
+}
+
+#profileImg:hover {
+	filter: brightness(0.7) sepia(0.3) hue-rotate(90deg);
+}
+
+button {
+	margin: 0 auto;
+	color: white;
+	width: auto;
+	height: auto;
+	min-height: 2rem;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: var(--font-size);
+	border-radius: var(--border-radius);
+	background-color: var(--primary-color);
+}
+
+button:hover {
+	background-color: var(--primary-color-dark); 
+}
+
+button:active {
+	background-color: var(--primary-color-darker);
+}

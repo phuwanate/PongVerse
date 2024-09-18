@@ -1,0 +1,36 @@
+:root {
+	--primary-color-light: #7de7dc;
+	--primary-color: #4FD1C5;
+	--primary-color-dark: #49B4A9;
+	--primary-color-darker: #3B9087;
+	--primary-color-online: #48BB78;
+
+	--red-color: #E53E3E;
+
+
+	--gray-color-bg: #F8F9FA;
+	--gray-color-light: #C4C4C4;
+	--gray-color-medium: #A3A3A3;
+	--gray-color-dark: #2D3748;
+	
+	--icon-size: 1.4rem;
+	--font-size: 0.9rem;
+	--header-font-size: 1rem;
+	--small-avatar-size: 40px;
+	
+	--table-height: 3rem;
+	--table-line: 1px solid rgba(132, 139, 200, 0.18);
+	
+	--border-radius: 0.75rem;
+	--border-chatroom: 3px solid white;
+	--border-green:  2px solid var(--primary-color);
+
+	--box-shadow: 0 4px 8px rgba(0, 0, 0, 0.02); 
+	--nav-line: linear-gradient(to right, var(--gray-color-bg), #D8DBDD, var(--gray-color-bg));
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: var(--gray-color-bg);
+}

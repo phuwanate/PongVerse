@@ -1,0 +1,61 @@
+.custom-bg {
+	height: 70vh;
+	min-height: 31rem;
+	margin-top: 2vh;
+	box-shadow: var(--box-shadow);
+	border-radius:var(--border-radius);
+}
+
+#header {
+	padding-top: 2vh;
+	padding-left: 2vw;
+	color: var(--primary-color);
+	font-size: var(--header-font-size);
+}
+
+table {
+	width: 95%;
+	margin: 0 auto;
+	border-radius:var(--border-radius);
+}
+
+table tbody td {
+	height: var(--table-height);
+	font-size: var(--font-size);
+	color: var(--gray-color-dark);
+	border-bottom: var(--table-line);
+}
+
+table tbody tr:first-child td {
+	border-top: var(--table-line);
+}
+
+
+#friendImg {
+	object-fit: cover;
+	width: var(--small-avatar-size);
+	height: var(--small-avatar-size);
+}
+
+button {
+	margin: 0 auto;
+	width: 10rem;
+	height: 2rem;
+	color: white;
+	font-size: var(--font-size);
+	border-radius: var(--border-radius);
+	background-color: var(--primary-color);
+}
+
+button:hover {
+	background-color: var(--primary-color-dark); 
+}
+
+button:active {
+	background-color: var(--primary-color-darker);
+}
+
+i {
+	color: white;
+	font-size: var(--icon-size);
+}

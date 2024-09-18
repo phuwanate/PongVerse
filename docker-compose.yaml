@@ -1,0 +1,108 @@
+version: '3.1'
+
+services:
+  postgres:
+    build:
+      context: ./requirement/postgres/
+      dockerfile: postgres.Dockerfile
+    image: transcendence-postgres
+    env_file:
+      - ./requirement/django/.env
+    environment:
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_pwd
+    container_name: postgres
+    secrets:
+      - postgres_pwd
+    volumes:
+      - db-postgres:/var/lib/postgresql/data
+    networks:
+      net-transcendence:
+        ipv4_address: 172.20.0.2
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 10s #run the health check command every 10 seconds
+      retries: 5 #if health check fail 5 times = mark the container as unhealthy
+      start_period: 30s #allows 30s to fail health checks without being marked as unhealthy
+      timeout: 5s # After the start_period(30s) ends, if healthcheck not complete within 5s = failure.
+   
+  django:
+    build: 
+      context: ./requirement/django/
+      dockerfile: django.Dockerfile
+    container_name: django
+    image: transcendence-django
+    volumes:
+      # - ./requirement/django/app:/usr/src/app
+      - db-upload:/usr/src/app/uploads/avatars/
+    env_file:
+      - ./requirement/django/.env
+    environment:
+      - SECRET_KEY_FILE=/run/secrets/secret_key
+      - DJANGO_DB_PASSWORD_FILE=/run/secrets/postgres_pwd
+      - EMAIL_HOST_PASSWORD_FILE=/run/secrets/email_host_pwd
+      - CLIENT_ID_FILE=/run/secrets/client_id
+      - CLIENT_SECRET_FILE=/run/secrets/client_secret
+      - RUN_MAKEMIGRATIONS=false
+    secrets:
+      - secret_key 
+      - postgres_pwd
+      - email_host_pwd
+      - client_id
+      - client_secret
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"] #need to change host if not use localhost.
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 5s
+    networks:
+      net-transcendence:
+        ipv4_address: 172.20.0.3
+  
+  nginx:
+    build:
+      context: ./requirement/nginx/
+      dockerfile: nginx.Dockerfile
+    image: transcendence-nginx
+    container_name: nginx
+    depends_on:
+      django:
+        condition: service_healthy
+    ports:
+      - "8443:8443"
+    restart: always
+    networks:
+      net-transcendence:
+        ipv4_address: 172.20.0.4
+
+secrets:
+  postgres_pwd:
+    file: ./requirement/django/credentials/postgres_pwd.txt
+  pgadmin4_pwd:
+    file: ./requirement/django/credentials/pgadmin4_pwd.txt
+  secret_key:
+    file: ./requirement/django/credentials/secret_key.txt
+  email_host_pwd:
+    file: ./requirement/django/credentials/email_host_pwd.txt
+  client_id:
+    file: ./requirement/django/credentials/client_id.txt
+  client_secret:
+    file: ./requirement/django/credentials/client_secret.txt
+
+volumes:
+  db-postgres:
+   name: db-postgres
+  db-upload:
+   name: db-upload
+
+networks:
+  net-transcendence:
+    name: net-transcendence
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24

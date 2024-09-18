@@ -1,0 +1,49 @@
+.canvas-container {
+    padding: 10px;
+    padding-top: 0;
+    height: 100%;
+    display: flex;
+    overflow: auto;
+	margin-top: 2vh;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+#canvas {
+    width: 100%;
+    max-width: 1200px;
+    aspect-ratio: 2 / 1;
+    border-radius:var(--border-radius);
+}
+
+.custom-bg {
+    margin-top: 2vh;
+    min-height: 31rem;
+    background-color: white;
+    height: calc(max(70vh, 100%));
+	border-radius:var(--border-radius);
+}
+
+.mode p {
+    padding: 0;
+    margin: 0;
+    margin-top: 2vh;
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: var(--font-size-header);
+}
+
+.btn-all button {
+    margin-top: 2vh;
+    height: 2rem;
+    border-radius: var(--border-radius);
+}
+
+@media (max-width: 767px) {
+    #canvas {
+        max-width: 300px;
+        aspect-ratio: 1 / 2;
+    }
+}

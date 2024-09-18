@@ -1,0 +1,27 @@
+.custom-bg {
+	height: 70vh;
+	min-height: 31rem;
+	margin-top: 2vh;
+	box-shadow: var(--box-shadow);
+	border-radius:var(--border-radius);
+}
+
+#header {
+	padding-top: 2vh;
+	padding-left: 2vw;
+	color: var(--primary-color);
+	font-size: var(--header-font-size);
+}
+
+.border-line {
+    width: 95%;
+    margin: 0 auto;
+    border-bottom: var(--table-line);
+}
+
+.btn-danger {
+	width: 6rem;
+	height: 2rem;
+	font-size: var(--font-size);
+	border-radius: var(--border-radius);
+}

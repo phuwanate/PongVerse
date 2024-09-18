@@ -1,0 +1,82 @@
+h3, p, h4, label {
+    color: #2D3748;
+}
+img {
+    width: 100%;
+    max-width: 20rem;
+    height: auto;
+}
+input[type="text"], input[type="email"] {
+    width: 10rem;
+    height: 38px;
+    padding: 0.5rem;
+    background: white;
+    border: 2px solid #4FD1C5;
+    color: #2D3748;
+    border-radius: 0.75rem; 
+}
+input[type="text"]::placeholder, input[type="email"]::placeholder  {
+    font-size: 0.9rem;
+    color: #C4C4C4;
+}
+#setUpBtn {
+    color: white;
+    background-color: #485f63;
+}
+#setUpBtn:hover {
+    background-color: #2c3b3d;
+}
+#regenBtn {
+    font-size: 0.9rem;
+    background-color: #2D3748;
+}
+#regenBtn:hover {
+    background-color: black; 
+}
+#learnMore {
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: #2D3748;
+}
+.button {
+    color: white;
+    border-radius:  0.75rem; 
+    background-color: #4FD1C5;
+}
+.button:hover {
+    color: white;
+    background-color: #49B4A9; 
+}
+.button:active {
+    color: black;
+}
+.primary-color {
+    color: #4FD1C5;
+}
+.r-custom{
+    border-radius: 0.75rem; 
+}
+.max-75-40 {
+    max-height: 75vh;
+    max-width: 40rem;
+}
+.max-80-36 {
+    max-height: 80vh;
+    max-width: 36rem;
+}
+.max-80-29 {
+    max-height: 80vh;
+    max-width: 29rem;
+}
+.max-80-30 {
+    max-height: 80vh;
+    max-width: 30rem;
+}
+.max-100-30 {
+    max-height: 100vh;
+    max-width: 30rem;
+}
+.footer {
+    font-size: 0.75rem;
+    color: #A3A3A3;
+}

@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+		<script type="module" src="{% static 'pong/js/pong.js' %}" ></script>
+</head>
+<body style="height: 100vh;">
+	<!-- <div id="pong"></div> -->
+	<pong-base-component id="pongComponent"></pong-base-component>
+<script>
+  const mockup = {
+	"type":"private",
+	"action":"finish",
+	"players":[
+		{
+			"name":"pnamnil",
+			"nickname":"pnamnil",
+			"status":"ready",
+			"avatar":"/user-media/avatars/small_pnamnil.webp",
+			"session_id":"w7ly9j9qqcb96d8t058cqb3fuki2uqjn"
+		},
+		{
+			"name":"spipitku",
+			"nickname":"spipitku",
+			"status":"ready",
+			"avatar":"/user-media/avatars/small_spipitku.webp",
+			"session_id":"y4bu1ixpo8itoj67d854rzxrzk38i0ul"
+		}
+	],
+	"game_datas":[
+		{
+			"table":{
+				"width":200,
+				"height":100
+			},
+			"ball":{
+				"table":{
+					"width":200,
+					"height":100
+				},
+				"x":100,
+				"y":50,
+				"mx":-5,
+				"my":2
+			},
+			"player_one":{
+				"name":"pnamnil",
+				"nickname":"pnamnil",
+				"x":0,
+				"y":50,
+				"move":"idle",
+				"score":10
+			},	
+			"player_two":{
+				"name":"spipitku",
+				"nickname":"spipitku",
+				"x":200,
+				"y":50,
+				"move":"idle",
+				"score":9
+			},
+			"game_loop":false,
+			"winner":{
+				"name":"pnamnil",
+				"nickname":"pnamnil",
+				"x":0,
+				"y":50,
+				"move":"idle",
+				"score":10
+			},
+			"player_radius":10,
+			"ball_radius":4,
+			"player_speed":2,
+			"max_score":10
+		}
+	],
+	"match_index":0,
+	"channel_name":"Xi9TvDh9xWKCwtVVXxagdv",
+	"wait_match_time":3
+}
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const pongComponent = document.getElementById('pongComponent')
+		console.log(pongComponent)
+		pongComponent.draw(mockup)
+
+		window.addEventListener('resize', () => 
+			// console.log('Window resized to: ' + window.innerWidth + 'x' + window.innerHeight))
+			pongComponent.draw(mockup)
+		)
+	})
+</script>
+</body>
+</html>

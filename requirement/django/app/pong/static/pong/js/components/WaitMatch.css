@@ -1,0 +1,156 @@
+:host {
+    --border-w: 5px;
+    --border-s: solid;
+    --border-r: 15px;
+    --primary: var(--primary-color);
+    --secondary: var(--gray-color-dark);
+}
+
+.waitmatch-container{
+    width: 100%;
+    height: 70vh;
+    min-height: 31rem;
+    margin-top: 2vh;
+    overflow: auto;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    border-radius:var(--border-radius);
+}
+
+#header {
+    padding: 0;
+	padding-left: 2vw;
+    font-weight: bold;
+	color: var(--primary-color);
+	font-size: var(--header-font-size);
+}
+
+.winner{
+    height: 10%;
+    display: flex;
+}
+
+.winner div{
+    flex-grow: 1;
+}
+
+.semi{
+    height: 10%;
+    display: flex;
+}
+
+.semi div{
+    flex-grow: 1;
+}
+
+.first-round{
+    height: 10%;
+    display: flex;
+}
+
+.first-round div{
+    flex-grow: 1;
+}
+
+.b-top{
+    border-top: var(--border-w) var(--border-s) var(--secondary);
+}
+
+.b-rigth{
+    height: 100%;
+    border-right-width: var(--border-w);
+    border-right-style:  var(--border-s);
+    border-right-color:  var(--secondary);
+}
+
+.b-left{
+    height: 100%;
+    border-left: var(--border-w) var(--border-s) var(--secondary);
+}
+
+.b-top-right-round{
+    border-top-right-radius: var(--border-r);
+}
+
+.b-top-left-round{
+    border-top-left-radius: var(--border-r);
+}
+
+.name-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.name-tour {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+
+.name-private {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+
+.name-winner {
+    display: flex;
+    width: 25%;
+    justify-content: center;
+}
+
+.name-container p {
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0;
+    color: #A3A3A3;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+#trophy img {
+    width: 25%;
+    max-width: 130px;
+    height: auto;
+}
+
+.avatar-container {
+    display: flex;
+    height: 20%;
+    max-height: 110px;
+}
+
+.image-container {
+    display: flex;
+    width: 25%;
+    justify-content: center;
+    padding: 5px;
+}
+
+.image-round {
+    border-style: dashed;
+    border-width: var(--border-w);
+    border-color: var(--secondary);
+}
+
+.avatar {
+    max-width: 100px;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--border-r);
+    object-fit: cover;
+}
+
+.drop-color {
+    opacity: 30%;
+}
+
+.winner-line{
+    border-color: var(--primary);
+}
+
+.loser-line{
+    border-width: 0px;
+}

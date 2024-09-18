@@ -1,0 +1,48 @@
+.player {
+	width: 95%;
+	height: 3rem;
+	margin: 0 auto;
+	padding-right: 4vw;
+	padding-left: 1.5vw;
+	border-bottom: var(--table-line);
+}
+
+#friendImg {
+	object-fit: cover;
+	width: var(--small-avatar-size);
+	height: var(--small-avatar-size);
+}
+
+.wait {
+	color: white;
+	background-color: var(--gray-color-light);
+}
+
+.ready {
+	color: white;
+	background-color: var(--primary-color);
+}
+
+button {
+	width: 9rem;
+	height: 2rem;
+	color: white;
+	margin: 0 auto;
+	font-size: var(--font-size);
+	border-radius: var(--border-radius);
+}
+
+button:hover {
+	background-color: var(--primary-color); 
+}
+
+button:active {
+	background-color: var(--primary-color-light);
+}
+
+button:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+	background-color: black;
+	color: var(--gray-color-bg);
+}

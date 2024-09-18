@@ -1,0 +1,54 @@
+.custom-bg {
+	height: 37vh;
+	min-height: 15rem;
+	box-shadow: var(--box-shadow);
+	border-radius:var(--border-radius);
+}
+
+#header {
+	display: flex;
+	padding-left: 2vw;
+	padding-right: 2vw; 
+	align-items: center; 
+	justify-content: space-between;
+}
+
+#headerText{
+	padding-top: 2vh;
+	font-weight: bold;
+	color: var(--primary-color);
+	font-size: var(--header-font-size);
+}
+
+table {
+	width: 95%;
+	margin: 0 auto;
+	border-radius:var(--border-radius);
+}
+
+#friendRecommendBtn {
+	margin-top: 0rem;
+	width: 9rem;
+	height: 2rem;
+	color: white;
+	font-size: var(--font-size);
+	border-radius: var(--border-radius);
+	background-color: var(--primary-color);
+}
+
+#friendRecommendBtn:hover {
+	background-color: var(--primary-color-dark); 
+}
+
+#friendRecommendBtn:active {
+	background-color: var(--primary-color-darker);
+}
+
+#friendRecommendBtn i {
+	color: white;
+	font-size: var(--icon-size);
+}
+
+friend-component {
+	border-bottom: var(--table-line);
+}

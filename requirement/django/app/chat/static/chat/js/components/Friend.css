@@ -1,0 +1,56 @@
+:host {
+	display: flex;
+	height: var(--table-height);
+	font-size: var(--font-size);
+	color: var(--gray-color-dark);
+	justify-content: space-between;
+	align-items: center; 
+}
+#friendImg {
+	object-fit: cover;
+	width: var(--small-avatar-size);
+	height: var(--small-avatar-size);
+}
+
+#profileName {
+	width: 7rem;
+}
+
+.all-btn {
+	width: 6rem;
+}
+
+.all-btn i {
+	margin-left: 7px;
+	font-size: 1.3rem;
+}
+
+.status-online {
+	margin: 0;
+	padding: 2px;
+	width: 3.5rem;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: var(--box-shadow);
+	border-radius: var(--border-radius);
+	background: var(--primary-color-online);
+}
+
+.status-offline {
+	margin: 0;
+	padding: 2px;
+	width: 3.5rem;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: var(--box-shadow);
+	border-radius: var(--border-radius);
+	background: var(--gray-color-medium);
+}
+
+.new-message {
+	color: var(--red-color);
+}

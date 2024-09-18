@@ -1,0 +1,51 @@
+.custom-bg {
+	height: 70vh;
+	min-height: 31rem;
+	margin-top: 2vh;
+	box-shadow: var(--box-shadow);
+	border-radius:var(--border-radius);
+}
+
+#header {
+	padding-top: 2vh;
+	padding-left: 2vw;
+	color: var(--primary-color);
+	font-size: var(--header-font-size);
+}
+
+table {
+	width: 95%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0 1rem 1rem 1rem;
+	border-radius:var(--border-radius);
+}
+
+
+table thead th {
+	font-size: var(--font-size);
+	color: var(--gray-color-medium);
+}
+
+table tbody td {
+	height: 2.8rem;
+	font-size: var(--font-size);
+	color: var(--gray-color-dark);
+	border-bottom: var(--table-line);
+}
+
+table tbody tr:first-child td {
+	border-top: var(--table-line);
+}
+
+/* XS */
+@media screen and (max-width: 575px) {
+	table thead th {
+		font-size: 0.8rem;
+	}
+	
+	table tbody td {
+		height: 2.8rem;
+		font-size: 0.7rem;
+	}
+}

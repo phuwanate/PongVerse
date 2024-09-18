@@ -1,0 +1,53 @@
+.custom-bg {
+	height: 70vh;
+	min-height: 31rem;
+	margin-top: 2vh;
+	box-shadow: var(--box-shadow);
+	border-radius: var(--border-radius);
+}
+
+#header {
+	padding-top: 2vh;
+	padding-left: 2vw;
+	color: var(--primary-color);
+	font-size: var(--header-font-size);
+}
+
+#content {
+	margin: 0 4vw;
+	padding: 10px;
+	border: var(--border-green);
+	border-radius: var(--border-radius);
+}
+
+.list-item {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+i {
+	width: 2.0rem; 
+	height: 2.0rem; 
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: var(--icon-size);
+	border: var(--border-green);
+	color: var(--primary-color);
+	box-shadow: var(--box-shadow);
+	border-radius: var(--border-radius);
+	background-color: var(--gray-color-bg);
+}
+
+.text {
+	margin-bottom: 0;
+	font-size: var(--font-size);
+	color: var(--primary-color);
+}
+
+.amount {
+	margin-bottom: 0;
+	font-size: var(--font-size);
+	color: var(--gray-color-medium);
+}
