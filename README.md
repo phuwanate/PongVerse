@@ -27,9 +27,6 @@ To `stop` all containers
 https://<your-domain>:8443/
 ```
 
-## API-DOC
-<a href="https://copper-oxygen-2da.notion.site/Transcendence-120883905052447ea5dc672972bf6e19?pvs=4"> API-DOC </a>
-
 ## ENV File
 ```
 #For django app settings
