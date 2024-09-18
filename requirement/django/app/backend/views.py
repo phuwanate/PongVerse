@@ -134,7 +134,7 @@ def generate_totp_secret(request):
             else:
                 totp_secret = user.totp_secret
             totp_uri = pyotp.totp.TOTP(totp_secret).provisioning_uri(
-                user.username, issuer_name="Transcendence"
+                user.username, issuer_name="PongVerse"
             )
 
             qr = qrcode.make(totp_uri)

@@ -4,7 +4,7 @@ if [ -f "manage.py" ];
 then
     echo found
 else
-    django-admin startproject transcendence .
+    django-admin startproject pongverse .
     python manage.py startapp backend
     python manage.py startapp frontend
     python manage.py startapp chat

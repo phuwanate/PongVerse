@@ -5,7 +5,7 @@ services:
     build:
       context: ./requirement/postgres/
       dockerfile: postgres.Dockerfile
-    image: transcendence-postgres
+    image: pongverse-postgres
     env_file:
       - ./requirement/django/.env
     environment:
@@ -16,7 +16,7 @@ services:
     volumes:
       - db-postgres:/var/lib/postgresql/data
     networks:
-      net-transcendence:
+      net-pongverse:
         ipv4_address: 172.20.0.2
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "postgres"]
@@ -30,7 +30,7 @@ services:
       context: ./requirement/django/
       dockerfile: django.Dockerfile
     container_name: django
-    image: transcendence-django
+    image: pongverse-django
     volumes:
       # - ./requirement/django/app:/usr/src/app
       - db-upload:/usr/src/app/uploads/avatars/
@@ -42,7 +42,7 @@ services:
       - EMAIL_HOST_PASSWORD_FILE=/run/secrets/email_host_pwd
       - CLIENT_ID_FILE=/run/secrets/client_id
       - CLIENT_SECRET_FILE=/run/secrets/client_secret
-      - RUN_MAKEMIGRATIONS=false
+      - RUN_MAKEMIGRATIONS=yes
     secrets:
       - secret_key 
       - postgres_pwd
@@ -60,14 +60,14 @@ services:
       start_period: 30s
       timeout: 5s
     networks:
-      net-transcendence:
+      net-pongverse:
         ipv4_address: 172.20.0.3
   
   nginx:
     build:
       context: ./requirement/nginx/
       dockerfile: nginx.Dockerfile
-    image: transcendence-nginx
+    image: pongverse-nginx
     container_name: nginx
     depends_on:
       django:
@@ -76,7 +76,7 @@ services:
       - "8443:8443"
     restart: always
     networks:
-      net-transcendence:
+      net-pongverse:
         ipv4_address: 172.20.0.4
 
 secrets:
@@ -100,8 +100,8 @@ volumes:
    name: db-upload
 
 networks:
-  net-transcendence:
-    name: net-transcendence
+  net-pongverse:
+    name: net-pongverse
     driver: bridge
     ipam:
       config:

@@ -31,16 +31,6 @@ amt1: close_auth
 	docker compose -f docker-compose.yaml down
 	$(MAKE) open_auth
 
-open_auth:
-	sed -i '' -e 's/ALLOW_API_WITHOUT_AUTH = True/ALLOW_API_WITHOUT_AUTH = False/' \
-	-e 's/ALLOW_API_WITHOUT_JWT = True/ALLOW_API_WITHOUT_JWT = False/' \
-	./requirement/django/app/transcendence/settings.py
-
-close_auth:
-	sed -i '' -e 's/ALLOW_API_WITHOUT_AUTH = False/ALLOW_API_WITHOUT_AUTH = True/' \
-	-e 's/ALLOW_API_WITHOUT_JWT = False/ALLOW_API_WITHOUT_JWT = True/' \
-	./requirement/django/app/transcendence/settings.py
-
 backup_volume:
 	docker compose -f docker-compose-backup.yaml up backup-upload --build
 	docker compose -f docker-compose-backup.yaml up backup --build
